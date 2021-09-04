@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Create Blog</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+            <h1 class="text-center">Edit Blog</h1>
+            <div class="card-body">
+                <form th:action="@{/r5i3gn54/{bolgId} (bolgId = ${blog.bolgId})}" th:object="${blog}" method="post"  enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Blog Title</label>
+                        <input
+                                type="text"
+                                name="title"
+                                th:field="*{title}"
+                                class="form-control"
+                                placeholder="Enter title"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Blog Content</label>
+                        <input
+                                type="text"
+                                name="content"
+                                th:field="*{content}"
+                                class="form-control"
+                                placeholder="Enter content"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Blog link</label>
+                        <input
+                                type="text"
+                                name="link"
+                                th:field="*{link}"
+                                class="form-control"
+                                placeholder="Enter link"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label>Blog image</label>
+                        <input
+                                type="file"
+                                name="blogFile"
+                                class="form-control"
+                                enctype="multipart/form-data"
+                                multiple
+                        />
+                    </div>
+                    <div class="box-footer">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
